@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BES.xsd">
+	<Fixlet>
+		<Title>Uninstall Oracle Java Runtime 8 Update 181</Title>
+		<Description><![CDATA[<P>This Fixlet will uninstall <STRONG><FONT color=#0080ff>Oracle Java Runtime Environment 8 Update 181</FONT></STRONG>.</P>
+<P>A reboot may be required if subsequently reinstalling Java.</P>]]></Description>
+		<Relevance>exists value "DisplayVersion" whose ((it = "8" and it = "8.0.1810") of (it as string as version)) of keys whose (value "DisplayName" of it as string as lowercase contains "j2se runtime environment" OR value "DisplayName" of it as string as lowercase contains "runtimeenvironment" OR value "DisplayName" of it as string as lowercase starts with "java(tm)" OR value "DisplayName" of it as string as lowercase starts with "java 8") of key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" of registry</Relevance>
+		<Category></Category>
+		<Source>Internal</Source>
+		<SourceID></SourceID>
+		<SourceReleaseDate>2023-07-07</SourceReleaseDate>
+		<SourceSeverity></SourceSeverity>
+		<CVENames></CVENames>
+		<SANSID></SANSID>
+		<MIMEField>
+			<Name>x-fixlet-modification-time</Name>
+			<Value>Sun, 09 Jul 2023 02:02:09 +0000</Value>
+		</MIMEField>
+		<Domain>BESC</Domain>
+		<DefaultAction ID="Action1">
+			<Description>
+				<PreLink>Click </PreLink>
+				<Link>here</Link>
+				<PostLink><![CDATA[ to uninstall <STRONG><FONT color=#0080ff>Oracle Java Runtime Environment 8 Update 181.</FONT></STRONG>]]></PostLink>
+			</Description>
+			<ActionScript MIMEType="application/x-Fixlet-Windows-PowerShell">Uninstall-Package -Name "Java 8 Update 181" -Force</ActionScript>
+			<SuccessCriteria Option="RunToCompletion"></SuccessCriteria>
+		</DefaultAction>
+	</Fixlet>
+</BES>
