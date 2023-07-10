@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BES.xsd">
+	<Fixlet>
+		<Title>Uninstall all Oracle Java Runtime Environments</Title>
+		<Description><![CDATA[<P>This Fixlet will uninstall <STRONG><FONT color=#ff0000>ALL Versions of the Oracle Java Runtime Environment.</FONT></STRONG></P>
+<P>A reboot may be required if subsequently reinstalling Java.</P>]]></Description>
+		<Relevance>exists (it as string) whose(it contains "Java") of values "DisplayName" of keys of keys "HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall" of (x64 registries; x32 registries)</Relevance>
+		<Category></Category>
+		<Source>Internal</Source>
+		<SourceID></SourceID>
+		<SourceReleaseDate>2023-07-07</SourceReleaseDate>
+		<SourceSeverity></SourceSeverity>
+		<CVENames></CVENames>
+		<SANSID></SANSID>
+		<MIMEField>
+			<Name>x-fixlet-modification-time</Name>
+			<Value>Mon, 10 Jul 2023 03:24:58 +0000</Value>
+		</MIMEField>
+		<Domain>BESC</Domain>
+		<DefaultAction ID="Action1">
+			<Description>
+				<PreLink>Click </PreLink>
+				<Link>here</Link>
+				<PostLink><![CDATA[ to uninstall <STRONG><FONT color=#ff0000>ALL Versions of the Oracle Java Runtime Environment.</FONT></STRONG>]]></PostLink>
+			</Description>
+			<ActionScript MIMEType="application/x-Fixlet-Windows-PowerShell">Get-Package *Java* | Uninstall-Package -Force</ActionScript>
+			<SuccessCriteria Option="CustomRelevance">exists (it as string) whose(it contains "Java") of values "DisplayName" of keys of keys "HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall" of (x64 registries; x32 registries)</SuccessCriteria>
+		</DefaultAction>
+	</Fixlet>
+</BES>
